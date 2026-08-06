@@ -1,21 +1,5 @@
 DROP TABLE IF EXISTS customers CASCADE;
 
-DROP TYPE IF EXISTS customer_status_enum CASCADE;
-DROP TYPE IF EXISTS risk_segment_enum CASCADE;
-
---ENUMS
-CREATE TYPE customer_status_enum as ENUM (
-    'ACTIVE',
-    'BLOCKED',
-    'CLOSED'
-);
-
-CREATE TYPE risk_segment_enum as ENUM (
-    'LOW',
-    'MEDIUM',
-    'HIGH'
-);
-
 
 --TABLE
 CREATE TABLE customers (
@@ -24,7 +8,7 @@ CREATE TABLE customers (
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    phone VARCHAR(20),
+    phone VARCHAR(25),
     country_code CHAR(2) NOT NULL,
     country_name VARCHAR(100) NOT NULL,
     state VARCHAR(100),
@@ -61,5 +45,3 @@ ON customers(customer_status);
 
 CREATE INDEX idx_customers_signup
 ON customers(signup_date);
-
-u
