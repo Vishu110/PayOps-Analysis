@@ -1,0 +1,317 @@
+countries:
+
+  IN:
+    name: India
+    iso3: IND
+    currency: INR
+    timezone: Asia/Kolkata
+    continent: Asia
+    faker_locale: en_IN
+
+    states:
+      KA:
+        name: Karnataka
+        cities:
+          - Bengaluru
+          - Mysuru
+          - Mangaluru
+
+      MH:
+        name: Maharashtra
+        cities:
+          - Mumbai
+          - Pune
+          - Nagpur
+
+      TN:
+        name: Tamil Nadu
+        cities:
+          - Chennai
+          - Coimbatore
+          - Madurai
+
+      DL:
+        name: Delhi
+        cities:
+          - New Delhi
+
+      TS:
+        name: Telangana
+        cities:
+          - Hyderabad
+
+      GJ:
+        name: Gujarat
+        cities:
+          - Ahmedabad
+          - Surat
+
+      WB:
+        name: West Bengal
+        cities:
+          - Kolkata
+
+
+  US:
+    name: United States
+    iso3: USA
+    currency: USD
+    timezone: America/New_York
+    continent: North America
+    faker_locale: en_US
+
+    states:
+      CA:
+        name: California
+        cities:
+          - Los Angeles
+          - San Diego
+          - San Francisco
+
+      NY:
+        name: New York
+        cities:
+          - New York City
+          - Buffalo
+          - Rochester
+
+      TX:
+        name: Texas
+        cities:
+          - Houston
+          - Dallas
+          - Austin
+
+      FL:
+        name: Florida
+        cities:
+          - Miami
+          - Orlando
+          - Tampa
+
+      WA:
+        name: Washington
+        cities:
+          - Seattle
+          - Spokane
+
+      IL:
+        name: Illinois
+        cities:
+          - Chicago
+          - Springfield
+
+      MA:
+        name: Massachusetts
+        cities:
+          - Boston
+          - Cambridge
+
+      CO:
+        name: Colorado
+        cities:
+          - Denver
+          - Colorado Springs
+
+
+  GB:
+    name: United Kingdom
+    iso3: GBR
+    currency: GBP
+    timezone: Europe/London
+    continent: Europe
+    faker_locale: en_GB
+
+    states:
+      ENG:
+        name: England
+        cities:
+          - London
+          - Manchester
+          - Birmingham
+          - Liverpool
+          - Leeds
+
+      SCT:
+        name: Scotland
+        cities:
+          - Edinburgh
+          - Glasgow
+          - Aberdeen
+
+      WLS:
+        name: Wales
+        cities:
+          - Cardiff
+          - Swansea
+          - Newport
+
+      NIR:
+        name: Northern Ireland
+        cities:
+          - Belfast
+          - Derry
+
+
+  DE:
+    name: Germany
+    iso3: DEU
+    currency: EUR
+    timezone: Europe/Berlin
+    continent: Europe
+    faker_locale: de_DE
+
+    states:
+      BE:
+        name: Berlin
+        cities:
+          - Berlin
+
+      BY:
+        name: Bavaria
+        cities:
+          - Munich
+          - Nuremberg
+          - Augsburg
+
+      BW:
+        name: Baden-Württemberg
+        cities:
+          - Stuttgart
+          - Mannheim
+          - Karlsruhe
+
+      HE:
+        name: Hesse
+        cities:
+          - Frankfurt
+          - Wiesbaden
+          - Darmstadt
+
+      NW:
+        name: North Rhine-Westphalia
+        cities:
+          - Cologne
+          - Düsseldorf
+          - Dortmund
+
+      HH:
+        name: Hamburg
+        cities:
+          - Hamburg
+
+      SN:
+        name: Saxony
+        cities:
+          - Dresden
+          - Leipzig
+
+
+  AU:
+    name: Australia
+    iso3: AUS
+    currency: AUD
+    timezone: Australia/Sydney
+    continent: Oceania
+    faker_locale: en_AU
+
+    states:
+      NSW:
+        name: New South Wales
+        cities:
+          - Sydney
+          - Newcastle
+          - Wollongong
+
+      VIC:
+        name: Victoria
+        cities:
+          - Melbourne
+          - Geelong
+          - Ballarat
+
+      QLD:
+        name: Queensland
+        cities:
+          - Brisbane
+          - Gold Coast
+          - Cairns
+
+      WA:
+        name: Western Australia
+        cities:
+          - Perth
+          - Bunbury
+
+      SA:
+        name: South Australia
+        cities:
+          - Adelaide
+          - Mount Gambier
+
+
+  SG:
+    name: Singapore
+    iso3: SGP
+    currency: SGD
+    timezone: Asia/Singapore
+    continent: Asia
+
+    faker_locales:
+      - en_GB
+      - en_US
+      - zh_CN
+
+    states:
+      SG:
+        name: Singapore
+        cities:
+          - Singapore
+
+
+  CA:
+    name: Canada
+    iso3: CAN
+    currency: CAD
+    timezone: America/Toronto
+    continent: North America
+    faker_locale: en_CA
+
+    states:
+      ON:
+        name: Ontario
+        cities:
+          - Toronto
+          - Ottawa
+          - Mississauga
+
+      QC:
+        name: Quebec
+        cities:
+          - Montreal
+          - Quebec City
+          - Laval
+
+      BC:
+        name: British Columbia
+        cities:
+          - Vancouver
+          - Victoria
+          - Surrey
+
+      AB:
+        name: Alberta
+        cities:
+          - Calgary
+          - Edmonton
+          - Red Deer
+
+      MB:
+        name: Manitoba
+        cities:
+          - Winnipeg
+
+      NS:
+        name: Nova Scotia
+        cities:
+          - Halifax

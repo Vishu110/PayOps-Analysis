@@ -1,0 +1,82 @@
+customers:
+
+  total_customers: 50000
+
+  country_distribution:
+
+    IN:
+      weight: 41.43
+
+    US:
+      weight: 23.87
+
+    GB:
+      weight: 9.73
+
+    DE:
+      weight: 7.45
+
+    AU:
+      weight: 6.38
+
+    SG:
+      weight: 5.61
+
+    CA:
+      weight: 5.53
+
+  risk_distribution:
+
+    LOW:
+      weight: 84.92
+
+    MEDIUM:
+      weight: 12.11
+
+    HIGH:
+      weight: 2.97
+
+  status_distribution:
+
+    ACTIVE:
+      weight: 96.94
+
+    BLOCKED:
+      weight: 2.11
+
+    CLOSED:
+      weight: 0.95
+
+  signup_year_distribution:
+
+    2021:
+      weight: 5.00
+
+    2022:
+      weight: 10.00
+
+    2023:
+      weight: 18.00
+
+    2024:
+      weight: 25.00
+
+    2025:
+      weight: 27.00
+
+    2026:
+      weight: 15.00
+
+  payment_methods_per_customer:
+
+    1:
+      weight: 46.80
+
+    2:
+      weight: 33.60
+
+    3:
+      weight: 14.20
+
+    4:
+      weight: 5.40
