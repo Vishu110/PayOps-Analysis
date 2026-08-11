@@ -315,3 +315,47 @@ countries:
         name: Nova Scotia
         cities:
           - Halifax
+
+
+  NL:
+    name: Netherlands
+    iso3: NLD
+    currency: EUR
+    timezone: Europe/Amsterdam
+    continent: Europe
+    faker_locale: nl_NL
+
+    states:
+      NH:
+        name: North Holland
+        cities:
+          - Amsterdam
+          - Haarlem
+          - Alkmaar
+
+      ZH:
+        name: South Holland
+        cities:
+          - Rotterdam
+          - The Hague
+          - Leiden
+
+      UT:
+        name: Utrecht
+        cities:
+          - Utrecht
+          - Amersfoort
+
+      NB:
+        name: North Brabant
+        cities:
+          - Eindhoven
+          - Tilburg
+          - Breda
+
+      GE:
+        name: Gelderland
+        cities:
+          - Arnhem
+          - Nijmegen
+          - Apeldoorn

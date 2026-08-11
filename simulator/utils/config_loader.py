@@ -3,8 +3,7 @@ from pathlib import Path
 import yaml
 
 
-# Project root:
-# PayOps-Analysis/
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 CONFIG_DIR = PROJECT_ROOT / "config"
@@ -47,5 +46,25 @@ def load_generator_config() -> dict:
     """
 
     file_path = CONFIG_DIR / "generator.yaml"
+
+    return load_yaml(file_path)
+
+
+def load_processors() -> dict:
+    """
+    Load processor reference data.
+    """
+
+    file_path = CONFIG_DIR / "reference" / "processors.yaml"
+
+    return load_yaml(file_path)
+
+
+def load_banks() -> dict:
+    """
+    Load issuing-bank reference data.
+    """
+
+    file_path = CONFIG_DIR / "reference" / "banks.yaml"
 
     return load_yaml(file_path)

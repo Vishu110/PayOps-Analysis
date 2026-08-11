@@ -80,3 +80,11 @@ customers:
 
     4:
       weight: 5.40
+
+
+processors:
+  default_status: ACTIVE
+
+
+banks:
+  default_status: ACTIVE

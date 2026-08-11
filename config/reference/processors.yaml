@@ -1,0 +1,100 @@
+processors:
+
+  stripe:
+    name: Stripe
+    headquarters_country_code: US
+
+    supported_regions:
+      - IN
+      - US
+      - GB
+      - DE
+      - AU
+      - SG
+      - CA
+
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+      - AMEX
+      - DISCOVER
+
+    default_processing_fee_percentage: 2.90
+
+  adyen:
+    name: Adyen
+    headquarters_country_code: NL
+
+    supported_regions:
+      - IN
+      - US
+      - GB
+      - DE
+      - AU
+      - SG
+      - CA
+
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+      - AMEX
+
+    default_processing_fee_percentage: 2.80
+
+  checkout:
+    name: Checkout.com
+    headquarters_country_code: GB
+
+    supported_regions:
+      - IN
+      - US
+      - GB
+      - DE
+      - AU
+      - SG
+      - CA
+
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+      - AMEX
+
+    default_processing_fee_percentage: 2.75
+
+  worldpay:
+    name: Worldpay
+    headquarters_country_code: US
+
+    supported_regions:
+      - US
+      - CA
+      - GB
+      - DE
+      - AU
+
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+      - AMEX
+      - DISCOVER
+
+    default_processing_fee_percentage: 2.95
+
+  paypal:
+    name: PayPal
+    headquarters_country_code: US
+
+    supported_regions:
+      - IN
+      - US
+      - GB
+      - DE
+      - AU
+      - SG
+      - CA
+
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+
+    default_processing_fee_percentage: 3.49

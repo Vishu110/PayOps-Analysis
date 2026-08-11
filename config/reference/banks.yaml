@@ -1,0 +1,100 @@
+banks:
+
+  hdfc:
+    name: HDFC Bank
+    bank_code: HDFCINBB
+    country_code: IN
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+
+  icici:
+    name: ICICI Bank
+    bank_code: ICICINBB
+    country_code: IN
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+
+  sbi:
+    name: State Bank of India
+    bank_code: SBININBB
+    country_code: IN
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+      - RUPAY
+
+  jpmorgan:
+    name: JPMorgan Chase
+    bank_code: CHASUS33
+    country_code: US
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+      - AMEX
+
+  bank_of_america:
+    name: Bank of America
+    bank_code: BOFAUS3N
+    country_code: US
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+
+  citibank:
+    name: Citibank
+    bank_code: CITIUS33
+    country_code: US
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+      - AMEX
+
+  barclays:
+    name: Barclays
+    bank_code: BARCGB22
+    country_code: GB
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+
+  hsbc_uk:
+    name: HSBC UK
+    bank_code: HBUKGB4B
+    country_code: GB
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+
+  deutsche_bank:
+    name: Deutsche Bank
+    bank_code: DEUTDEFF
+    country_code: DE
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+
+  commbank:
+    name: Commonwealth Bank of Australia
+    bank_code: CTBAAU2S
+    country_code: AU
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+
+  dbs:
+    name: DBS Bank
+    bank_code: DBSSSGSG
+    country_code: SG
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
+
+  rbc:
+    name: Royal Bank of Canada
+    bank_code: ROYCCAT2
+    country_code: CA
+    supported_card_networks:
+      - VISA
+      - MASTERCARD
