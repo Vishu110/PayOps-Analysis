@@ -41,6 +41,7 @@ CREATE TYPE bank_status_enum AS ENUM (
 --004_merchants.sql ENUMS
 DROP TYPE IF EXISTS merchant_category_enum CASCADE;
 DROP TYPE IF EXISTS merchant_status_enum CASCADE;
+DROP TYPE IF EXISTS merchant_size_segment_enum CASCADE;
 
 --Enums
 CREATE TYPE merchant_category_enum AS ENUM (
@@ -54,6 +55,13 @@ CREATE TYPE merchant_status_enum AS ENUM (
     'ACTIVE',
     'SUSPENDED',
     'TERMINATED'
+);
+
+CREATE TYPE merchant_size_segment_enum AS ENUM (
+    'SMALL',
+    'MEDIUM',
+    'LARGE',
+    'ENTERPRISE'
 );
 
 

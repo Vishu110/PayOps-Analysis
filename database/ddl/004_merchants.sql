@@ -8,6 +8,7 @@ CREATE TABLE merchants (
     merchant_name VARCHAR(150) NOT NULL,
     legal_name VARCHAR(200) NOT NULL,
     merchant_category merchant_category_enum NOT NULL,
+    size_segment merchant_size_segment_enum NOT NULL,
     country_code CHAR(2) NOT NULL,
     country_name VARCHAR(100) NOT NULL,
     default_currency CHAR(3) NOT NULL,
