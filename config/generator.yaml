@@ -88,3 +88,104 @@ processors:
 
 banks:
   default_status: ACTIVE
+
+
+merchants:
+
+  country_distribution:
+
+    IN:
+      weight: 32.47
+
+    US:
+      weight: 27.83
+
+    GB:
+      weight: 11.64
+
+    DE:
+      weight: 8.21
+
+    AU:
+      weight: 7.13
+
+    SG:
+      weight: 6.42
+
+    CA:
+      weight: 6.30
+
+
+  category_distribution:
+
+    ECOMMERCE:
+      weight: 48.63
+
+    SAAS:
+      weight: 21.47
+
+    MARKETPLACE:
+      weight: 17.82
+
+    DIGITAL_GOODS:
+      weight: 12.08
+
+
+  risk_distribution:
+
+    LOW:
+      weight: 76.84
+
+    MEDIUM:
+      weight: 18.73
+
+    HIGH:
+      weight: 4.43
+
+
+  status_distribution:
+
+    ACTIVE:
+      weight: 96.41
+
+    SUSPENDED:
+      weight: 2.74
+
+    TERMINATED:
+      weight: 0.85
+
+
+  settlement_cycle_distribution:
+
+    0:
+      weight: 4.72
+
+    1:
+      weight: 61.83
+
+    2:
+      weight: 22.64
+
+    3:
+      weight: 7.91
+
+    7:
+      weight: 2.90
+
+
+  processor_preference:
+
+    Stripe:
+      weight: 32.84
+
+    Adyen:
+      weight: 24.17
+
+    Checkout.com:
+      weight: 18.92
+
+    Worldpay:
+      weight: 13.46
+
+    PayPal:
+      weight: 10.61

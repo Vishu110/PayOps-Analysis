@@ -65,3 +65,56 @@ def load_processors(processors: list[dict]) -> int:
         raise
     finally:
         connection.close()
+
+
+def fetch_processors() -> list[dict]:
+    """
+    Fetch existing processors from PostgreSQL.
+
+    These records are used as dependencies by
+    downstream master-data generators.
+    """
+
+    query = """
+        SELECT
+            id,
+            processor_id,
+            processor_name,
+            headquarters_country_code,
+            supported_regions,
+            supported_card_networks,
+            default_processing_fee_percentage,
+            processor_status
+        FROM processors
+        ORDER BY id;
+    """
+
+    connection = get_connection()
+
+    try:
+
+        with connection.cursor() as cursor:
+
+            cursor.execute(query)
+
+            rows = cursor.fetchall()
+
+            columns = [
+                "id",
+                "processor_id",
+                "processor_name",
+                "headquarters_country_code",
+                "supported_regions",
+                "supported_card_networks",
+                "default_processing_fee_percentage",
+                "processor_status",
+            ]
+
+            return [
+                dict(zip(columns, row))
+                for row in rows
+            ]
+
+    finally:
+
+        connection.close()

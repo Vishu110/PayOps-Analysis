@@ -1,0 +1,604 @@
+merchants:
+
+  IN:
+
+    - merchant_key: flipkart
+      merchant_name: Flipkart
+      legal_name: Flipkart Internet Private Limited
+      categories:
+        - ECOMMERCE
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: myntra
+      merchant_name: Myntra
+      legal_name: Myntra Designs Private Limited
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+    - merchant_key: nykaa
+      merchant_name: Nykaa
+      legal_name: FSN E-Commerce Ventures Limited
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+    - merchant_key: meesho
+      merchant_name: Meesho
+      legal_name: Fashnear Technologies Private Limited
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: swiggy
+      merchant_name: Swiggy
+      legal_name: Swiggy Limited
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: zomato
+      merchant_name: Zomato
+      legal_name: Eternal Limited
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: zoho
+      merchant_name: Zoho
+      legal_name: Zoho Corporation Private Limited
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: freshworks
+      merchant_name: Freshworks
+      legal_name: Freshworks Technologies Private Limited
+      categories:
+        - SAAS
+      size_segment: LARGE
+
+    - merchant_key: chargebee
+      merchant_name: Chargebee
+      legal_name: Chargebee Inc.
+      categories:
+        - SAAS
+      size_segment: LARGE
+
+    - merchant_key: bookmyshow
+      merchant_name: BookMyShow
+      legal_name: Bigtree Entertainment Private Limited
+      categories:
+        - DIGITAL_GOODS
+      size_segment: LARGE
+
+    - merchant_key: unacademy
+      merchant_name: Unacademy
+      legal_name: Sorting Hat Technologies Private Limited
+      categories:
+        - DIGITAL_GOODS
+      size_segment: LARGE
+
+    - merchant_key: cred
+      merchant_name: CRED
+      legal_name: Dreamplug Technologies Private Limited
+      categories:
+        - DIGITAL_GOODS
+      size_segment: LARGE
+
+
+  US:
+
+    - merchant_key: amazon
+      merchant_name: Amazon
+      legal_name: Amazon.com Services LLC
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: walmart
+      merchant_name: Walmart
+      legal_name: Walmart Inc.
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: ebay
+      merchant_name: eBay
+      legal_name: eBay Inc.
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: etsy
+      merchant_name: Etsy
+      legal_name: Etsy, Inc.
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: target
+      merchant_name: Target
+      legal_name: Target Corporation
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: salesforce
+      merchant_name: Salesforce
+      legal_name: Salesforce, Inc.
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: adobe
+      merchant_name: Adobe
+      legal_name: Adobe Inc.
+      categories:
+        - SAAS
+        - DIGITAL_GOODS
+      size_segment: ENTERPRISE
+
+    - merchant_key: intuit
+      merchant_name: Intuit
+      legal_name: Intuit Inc.
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: netflix
+      merchant_name: Netflix
+      legal_name: Netflix, Inc.
+      categories:
+        - DIGITAL_GOODS
+      size_segment: ENTERPRISE
+
+    - merchant_key: spotify
+      merchant_name: Spotify
+      legal_name: Spotify USA Inc.
+      categories:
+        - DIGITAL_GOODS
+      size_segment: ENTERPRISE
+
+    - merchant_key: doordash
+      merchant_name: DoorDash
+      legal_name: DoorDash, Inc.
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+
+  GB:
+
+    - merchant_key: asos
+      merchant_name: ASOS
+      legal_name: ASOS plc
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: tesco
+      merchant_name: Tesco
+      legal_name: Tesco Stores Limited
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: marks_and_spencer
+      merchant_name: Marks & Spencer
+      legal_name: Marks and Spencer plc
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: currys
+      merchant_name: Currys
+      legal_name: Currys plc
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+    - merchant_key: ocado
+      merchant_name: Ocado
+      legal_name: Ocado Retail Limited
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+    - merchant_key: rightmove
+      merchant_name: Rightmove
+      legal_name: Rightmove plc
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: deliveroo
+      merchant_name: Deliveroo
+      legal_name: Deliveroo plc
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: trainline
+      merchant_name: Trainline
+      legal_name: Trainline plc
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: sage
+      merchant_name: Sage
+      legal_name: The Sage Group plc
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: wise
+      merchant_name: Wise
+      legal_name: Wise plc
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: moonpig
+      merchant_name: Moonpig
+      legal_name: Moonpig Group plc
+      categories:
+        - ECOMMERCE
+        - DIGITAL_GOODS
+      size_segment: LARGE
+
+
+  DE:
+
+    - merchant_key: zalando
+      merchant_name: Zalando
+      legal_name: Zalando SE
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: about_you
+      merchant_name: ABOUT YOU
+      legal_name: ABOUT YOU SE & Co. KG
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+    - merchant_key: hellofresh
+      merchant_name: HelloFresh
+      legal_name: HelloFresh SE
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: flix
+      merchant_name: Flix
+      legal_name: Flix SE
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: delivery_hero
+      merchant_name: Delivery Hero
+      legal_name: Delivery Hero SE
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: idealo
+      merchant_name: Idealo
+      legal_name: idealo internet GmbH
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: auto1
+      merchant_name: AUTO1 Group
+      legal_name: AUTO1 Group SE
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: celonis
+      merchant_name: Celonis
+      legal_name: Celonis SE
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: personio
+      merchant_name: Personio
+      legal_name: Personio SE & Co. KG
+      categories:
+        - SAAS
+      size_segment: LARGE
+
+    - merchant_key: sap
+      merchant_name: SAP
+      legal_name: SAP SE
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: deezer_de
+      merchant_name: Deezer
+      legal_name: Deezer S.A.
+      categories:
+        - DIGITAL_GOODS
+      size_segment: LARGE
+
+    - merchant_key: grover
+      merchant_name: Grover
+      legal_name: Grover Group GmbH
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+
+  AU:
+
+    - merchant_key: woolworths
+      merchant_name: Woolworths
+      legal_name: Woolworths Group Limited
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: coles
+      merchant_name: Coles
+      legal_name: Coles Group Limited
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: kmart_australia
+      merchant_name: Kmart
+      legal_name: Kmart Australia Limited
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: catch
+      merchant_name: Catch
+      legal_name: Catch.com.au Pty Ltd
+      categories:
+        - ECOMMERCE
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: kogan
+      merchant_name: Kogan
+      legal_name: Kogan.com Ltd
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+    - merchant_key: seek
+      merchant_name: SEEK
+      legal_name: SEEK Limited
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: realestate
+      merchant_name: realestate.com.au
+      legal_name: REA Group Limited
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: xero
+      merchant_name: Xero
+      legal_name: Xero Limited
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: atlassian
+      merchant_name: Atlassian
+      legal_name: Atlassian Corporation
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: canva
+      merchant_name: Canva
+      legal_name: Canva Pty Ltd
+      categories:
+        - SAAS
+        - DIGITAL_GOODS
+      size_segment: ENTERPRISE
+
+    - merchant_key: flight_centre
+      merchant_name: Flight Centre
+      legal_name: Flight Centre Travel Group Limited
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: qantas
+      merchant_name: Qantas
+      legal_name: Qantas Airways Limited
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+
+  SG:
+
+    - merchant_key: grab
+      merchant_name: Grab
+      legal_name: Grab Holdings Limited
+      categories:
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: sea
+      merchant_name: Sea
+      legal_name: Sea Limited
+      categories:
+        - MARKETPLACE
+        - DIGITAL_GOODS
+      size_segment: ENTERPRISE
+
+    - merchant_key: shopee_sg
+      merchant_name: Shopee
+      legal_name: Shopee Singapore Private Limited
+      categories:
+        - ECOMMERCE
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: carousell
+      merchant_name: Carousell
+      legal_name: Carousell Pte. Ltd.
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: razer
+      merchant_name: Razer
+      legal_name: Razer Inc.
+      categories:
+        - ECOMMERCE
+        - DIGITAL_GOODS
+      size_segment: ENTERPRISE
+
+    - merchant_key: propertyguru
+      merchant_name: PropertyGuru
+      legal_name: PropertyGuru Pte. Ltd.
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: ninja_van
+      merchant_name: Ninja Van
+      legal_name: Ninja Logistics Pte. Ltd.
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: patsnap
+      merchant_name: PatSnap
+      legal_name: PatSnap Pte. Ltd.
+      categories:
+        - SAAS
+      size_segment: LARGE
+
+    - merchant_key: endowus
+      merchant_name: Endowus
+      legal_name: Endowus Singapore Pte. Ltd.
+      categories:
+        - SAAS
+      size_segment: LARGE
+
+    - merchant_key: carro
+      merchant_name: Carro
+      legal_name: Trusty Cars Pte. Ltd.
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: secretlab
+      merchant_name: Secretlab
+      legal_name: Secretlab SG Pte. Ltd.
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+    - merchant_key: love_bonito
+      merchant_name: Love, Bonito
+      legal_name: Love, Bonito Pte. Ltd.
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+
+  CA:
+
+    - merchant_key: shopify
+      merchant_name: Shopify
+      legal_name: Shopify Inc.
+      categories:
+        - SAAS
+        - MARKETPLACE
+      size_segment: ENTERPRISE
+
+    - merchant_key: canadian_tire
+      merchant_name: Canadian Tire
+      legal_name: Canadian Tire Corporation, Limited
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: lululemon
+      merchant_name: lululemon
+      legal_name: lululemon athletica inc.
+      categories:
+        - ECOMMERCE
+      size_segment: ENTERPRISE
+
+    - merchant_key: best_buy_canada
+      merchant_name: Best Buy Canada
+      legal_name: Best Buy Canada Ltd.
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+    - merchant_key: simons
+      merchant_name: Simons
+      legal_name: La Maison Simons Inc.
+      categories:
+        - ECOMMERCE
+      size_segment: LARGE
+
+    - merchant_key: freshii
+      merchant_name: Freshii
+      legal_name: Freshii Inc.
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: hopper
+      merchant_name: Hopper
+      legal_name: Hopper Inc.
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE
+
+    - merchant_key: lightspeed
+      merchant_name: Lightspeed
+      legal_name: Lightspeed Commerce Inc.
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: klaviyo_ca
+      merchant_name: Klaviyo
+      legal_name: Klaviyo, Inc.
+      categories:
+        - SAAS
+      size_segment: ENTERPRISE
+
+    - merchant_key: wattpad
+      merchant_name: Wattpad
+      legal_name: Wattpad Corp.
+      categories:
+        - DIGITAL_GOODS
+      size_segment: LARGE
+
+    - merchant_key: stackadapt
+      merchant_name: StackAdapt
+      legal_name: StackAdapt Inc.
+      categories:
+        - SAAS
+      size_segment: LARGE
+
+    - merchant_key: skip
+      merchant_name: Skip
+      legal_name: SkipTheDishes Restaurant Services Inc.
+      categories:
+        - MARKETPLACE
+      size_segment: LARGE

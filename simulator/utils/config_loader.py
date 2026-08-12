@@ -68,3 +68,13 @@ def load_banks() -> dict:
     file_path = CONFIG_DIR / "reference" / "banks.yaml"
 
     return load_yaml(file_path)
+
+
+def load_merchants() -> dict:
+    """
+    Load merchant reference data.
+    """
+
+    file_path = CONFIG_DIR / "reference" / "merchants.yaml"
+
+    return load_yaml(file_path)
