@@ -71,3 +71,56 @@ def load_merchants(merchants: list[dict]) -> int:
     finally:
 
         connection.close()
+
+
+def fetch_merchants() -> list[dict]:
+    """
+    Fetch existing merchants from PostgreSQL.
+
+    These records are used as dependencies by
+    downstream product generation.
+    """
+
+    query = """
+        SELECT
+            id,
+            merchant_id,
+            merchant_name,
+            merchant_category,
+            size_segment,
+            country_code,
+            country_name,
+            default_currency
+        FROM merchants
+        ORDER BY id;
+    """
+
+    connection = get_connection()
+
+    try:
+
+        with connection.cursor() as cursor:
+
+            cursor.execute(query)
+
+            rows = cursor.fetchall()
+
+            columns = [
+                "id",
+                "merchant_id",
+                "merchant_name",
+                "merchant_category",
+                "size_segment",
+                "country_code",
+                "country_name",
+                "default_currency",
+            ]
+
+            return [
+                dict(zip(columns, row))
+                for row in rows
+            ]
+
+    finally:
+
+        connection.close()

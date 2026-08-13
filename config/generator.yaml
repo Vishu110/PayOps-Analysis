@@ -189,3 +189,130 @@ merchants:
 
     PayPal:
       weight: 10.61
+
+
+
+products:
+
+  products_per_merchant:
+
+    SMALL:
+      min: 5
+      max: 15
+
+    MEDIUM:
+      min: 10
+      max: 25
+
+    LARGE:
+      min: 20
+      max: 50
+
+    ENTERPRISE:
+      min: 40
+      max: 100
+
+
+  status_distribution:
+
+    ACTIVE:
+      weight: 97.00
+
+    DISCONTINUED:
+      weight: 3.00
+
+
+  merchant_category_mapping:
+
+    ECOMMERCE:
+      allowed_categories:
+        - ELECTRONICS
+        - CLOTHING
+        - HOME_APPLIANCES
+        - DIGITAL_GOODS
+
+    MARKETPLACE:
+      allowed_categories:
+        - ELECTRONICS
+        - CLOTHING
+        - HOME_APPLIANCES
+        - DIGITAL_GOODS
+
+    SAAS:
+      allowed_categories:
+        - SUBSCRIPTION
+        - DIGITAL_GOODS
+
+    DIGITAL_GOODS:
+      allowed_categories:
+        - DIGITAL_GOODS
+        - SUBSCRIPTION
+
+
+  price_ranges:
+
+    ELECTRONICS:
+      min: 20
+      max: 2500
+
+    CLOTHING:
+      min: 10
+      max: 500
+
+    DIGITAL_GOODS:
+      min: 5
+      max: 300
+
+    SUBSCRIPTION:
+      min: 5
+      max: 500
+
+    HOME_APPLIANCES:
+      min: 50
+      max: 3000
+
+
+  refund_probability:
+
+    ELECTRONICS:
+      min: 0.02
+      max: 0.08
+
+    CLOTHING:
+      min: 0.05
+      max: 0.15
+
+    DIGITAL_GOODS:
+      min: 0.00
+      max: 0.03
+
+    SUBSCRIPTION:
+      min: 0.01
+      max: 0.06
+
+    HOME_APPLIANCES:
+      min: 0.03
+      max: 0.10
+
+
+  chargeback_probability:
+
+    ELECTRONICS:
+      min: 0.005
+      max: 0.020
+
+    CLOTHING:
+      min: 0.005
+      max: 0.015
+
+    DIGITAL_GOODS:
+      min: 0.010
+      max: 0.040
+
+    SUBSCRIPTION:
+      min: 0.005
+      max: 0.025
+
+    HOME_APPLIANCES:
+      min: 0.003
+      max: 0.015

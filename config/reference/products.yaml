@@ -1,0 +1,310 @@
+products:
+
+  ELECTRONICS:
+
+    - Wireless Earbuds
+    - Bluetooth Speaker
+    - Smartwatch
+    - Fitness Tracker
+    - Wireless Headphones
+    - Gaming Headset
+    - Mechanical Keyboard
+    - Wireless Keyboard
+    - Gaming Mouse
+    - Wireless Mouse
+    - USB-C Hub
+    - Power Bank
+    - Portable SSD
+    - External Hard Drive
+    - USB Flash Drive
+    - Webcam
+    - Monitor
+    - Laptop
+    - Tablet
+    - Smartphone
+    - Smartphone Case
+    - Screen Protector
+    - Portable Charger
+    - Smart TV
+    - Streaming Device
+    - Wi-Fi Router
+    - Bluetooth Adapter
+    - Graphics Tablet
+    - Digital Camera
+    - Action Camera
+    - E-Reader
+    - Smart Ring
+    - Smart Home Hub
+    - Smart Doorbell
+    - Smart Security Camera
+    - Smart Light Bulb
+    - Smart Plug
+    - Smart Thermostat
+    - Noise Cancelling Headphones
+    - True Wireless Earphones
+    - Soundbar
+    - Home Theater System
+    - Projector
+    - Portable Projector
+    - Gaming Console
+    - Game Controller
+    - VR Headset
+    - Gaming Monitor
+    - Laptop Stand
+    - Laptop Docking Station
+    - Computer Speakers
+    - Microphone
+    - Tripod
+    - Camera Lens
+    - Camera Memory Card
+    - Wireless Charger
+    - Car Charger
+    - Surge Protector
+    - HDMI Cable
+    - USB-C Cable
+
+
+  CLOTHING:
+
+    - Cotton T-Shirt
+    - Polo Shirt
+    - Casual Shirt
+    - Formal Shirt
+    - Denim Jeans
+    - Chino Trousers
+    - Formal Trousers
+    - Jogger Pants
+    - Shorts
+    - Hoodie
+    - Sweatshirt
+    - Jacket
+    - Blazer
+    - Kurta
+    - Saree
+    - Salwar Suit
+    - Dress
+    - Skirt
+    - Leggings
+    - Sportswear
+    - Running Shoes
+    - Casual Shoes
+    - Formal Shoes
+    - Sandals
+    - Sneakers
+    - Socks
+    - Backpack
+    - Handbag
+    - Wallet
+    - Belt
+    - Linen Shirt
+    - Oxford Shirt
+    - Flannel Shirt
+    - Henley Shirt
+    - Tank Top
+    - Crop Top
+    - Cardigan
+    - Sweater
+    - Trench Coat
+    - Rain Jacket
+    - Windbreaker
+    - Puffer Jacket
+    - Cargo Pants
+    - Track Pants
+    - Thermal Wear
+    - Palazzo Pants
+    - Jumpsuit
+    - Romper
+    - Maxi Dress
+    - Midi Dress
+    - Mini Dress
+    - Formal Skirt
+    - Sports Bra
+    - Athletic Shorts
+    - Compression Shirt
+    - Swimwear
+    - Slippers
+    - Loafers
+    - Boots
+    - Running Jacket
+
+
+  DIGITAL_GOODS:
+
+    - Digital Course
+    - E-book
+    - Audiobook
+    - Music Download
+    - Video Download
+    - Digital Template
+    - Presentation Template
+    - Resume Template
+    - Design Template
+    - Stock Photo Pack
+    - Stock Video Pack
+    - Digital Artwork
+    - Icon Pack
+    - Font Pack
+    - Software License
+    - Productivity Toolkit
+    - Online Workshop
+    - Premium Content
+    - Digital Guide
+    - Online Exam Preparation
+    - Programming Course
+    - Data Science Course
+    - Machine Learning Course
+    - SQL Course
+    - Python Course
+    - Excel Course
+    - Analytics Course
+    - Business Course
+    - Marketing Course
+    - Finance Course
+    - Photography Course
+    - Graphic Design Course
+    - UI Design Course
+    - UX Design Course
+    - Coding Bootcamp
+    - Certification Preparation
+    - Language Learning Course
+    - Study Guide
+    - Research Report
+    - Industry Report
+    - Market Research Report
+    - Business Plan Template
+    - Invoice Template
+    - Budget Template
+    - Spreadsheet Template
+    - Social Media Template
+    - Website Template
+    - Email Template
+    - Presentation Theme
+    - Digital Planner
+    - Digital Calendar
+    - Printable Planner
+    - Photo Preset Pack
+    - Video Editing Preset Pack
+    - Sound Effect Pack
+    - Music Sample Pack
+    - 3D Model Pack
+    - Digital Wallpaper Pack
+    - Digital Sticker Pack
+    - Coding Template
+
+
+  SUBSCRIPTION:
+
+    - Basic Plan
+    - Starter Plan
+    - Standard Plan
+    - Premium Plan
+    - Professional Plan
+    - Business Plan
+    - Enterprise Plan
+    - Individual Plan
+    - Family Plan
+    - Student Plan
+    - Monthly Membership
+    - Annual Membership
+    - Premium Membership
+    - Cloud Storage Plan
+    - Security Plan
+    - Productivity Plan
+    - Streaming Plan
+    - Learning Plan
+    - Support Plan
+    - API Usage Plan
+    - Free Trial Plan
+    - Lite Plan
+    - Basic Annual Plan
+    - Standard Annual Plan
+    - Premium Annual Plan
+    - Professional Annual Plan
+    - Business Annual Plan
+    - Enterprise Annual Plan
+    - Team Plan
+    - Team Annual Plan
+    - Creator Plan
+    - Creator Annual Plan
+    - Developer Plan
+    - Developer Annual Plan
+    - Startup Plan
+    - Startup Annual Plan
+    - Growth Plan
+    - Growth Annual Plan
+    - Scale Plan
+    - Scale Annual Plan
+    - Plus Plan
+    - Plus Annual Plan
+    - Family Annual Plan
+    - Student Annual Plan
+    - Education Plan
+    - Education Annual Plan
+    - Storage Plan
+    - Storage Annual Plan
+    - Analytics Plan
+    - Analytics Annual Plan
+    - Marketing Plan
+    - Marketing Annual Plan
+    - Collaboration Plan
+    - Collaboration Annual Plan
+    - Communication Plan
+    - Communication Annual Plan
+    - Developer API Plan
+    - Developer API Annual Plan
+    - Enterprise Support Plan
+    - Enterprise Support Annual Plan
+
+
+  HOME_APPLIANCES:
+
+    - Air Fryer
+    - Microwave Oven
+    - Mixer Grinder
+    - Electric Kettle
+    - Coffee Maker
+    - Toaster
+    - Rice Cooker
+    - Induction Cooktop
+    - Food Processor
+    - Vacuum Cleaner
+    - Robot Vacuum
+    - Air Purifier
+    - Water Purifier
+    - Electric Fan
+    - Room Heater
+    - Air Conditioner
+    - Refrigerator
+    - Washing Machine
+    - Dishwasher
+    - Clothes Dryer
+    - Water Heater
+    - Hair Dryer
+    - Steam Iron
+    - Electric Shaver
+    - Blender
+    - Chest Freezer
+    - Mini Refrigerator
+    - Double Door Refrigerator
+    - Front Load Washing Machine
+    - Top Load Washing Machine
+    - Portable Washing Machine
+    - Dishwasher Compact
+    - Dishwasher Full Size
+    - Ceiling Fan
+    - Table Fan
+    - Tower Fan
+    - Room Cooler
+    - Portable Air Conditioner
+    - Convection Oven
+    - Electric Grill
+    - Sandwich Maker
+    - Juicer
+    - Hand Blender
+    - Stand Mixer
+    - Slow Cooker
+    - Pressure Cooker
+    - Water Dispenser
+    - Dehumidifier
+    - Garment Steamer
+    - Electric Blanket
