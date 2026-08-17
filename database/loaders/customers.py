@@ -64,3 +64,54 @@ def load_customers(customers: list[dict]) -> int:
 
     finally:
         connection.close()
+
+
+def fetch_customers() -> list[dict]:
+    """
+    Fetch existing customers from PostgreSQL.
+
+    These records are used as dependencies by
+    downstream master-data generators.
+    """
+
+    query = """
+        SELECT
+            id,
+            customer_id,
+            country_code,
+            country_name,
+            preferred_currency,
+            risk_segment,
+            customer_status
+        FROM customers
+        ORDER BY id;
+    """
+
+    connection = get_connection()
+
+    try:
+
+        with connection.cursor() as cursor:
+
+            cursor.execute(query)
+
+            rows = cursor.fetchall()
+
+            columns = [
+                "id",
+                "customer_id",
+                "country_code",
+                "country_name",
+                "preferred_currency",
+                "risk_segment",
+                "customer_status",
+            ]
+
+            return [
+                dict(zip(columns, row))
+                for row in rows
+            ]
+
+    finally:
+
+        connection.close()

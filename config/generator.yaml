@@ -82,6 +82,42 @@ customers:
       weight: 5.40
 
 
+payment_methods:
+
+  payment_method_type: CARD
+
+  status_distribution:
+
+    ACTIVE:
+      weight: 96.73
+
+    EXPIRED:
+      weight: 0.82
+
+    BLOCKED:
+      weight: 2.45
+
+
+  card_type_distribution:
+
+    CREDIT:
+      weight: 38.67
+
+    DEBIT:
+      weight: 61.33
+
+
+  expiry:
+
+    active:
+      min_year: 2027
+      max_year: 2031
+
+    expired:
+      min_year: 2024
+      max_year: 2026
+
+
 processors:
   default_status: ACTIVE
 
@@ -316,3 +352,8 @@ products:
     HOME_APPLIANCES:
       min: 0.003
       max: 0.015
+
+
+simulation:
+
+  current_date: 2026-08-14

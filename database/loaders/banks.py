@@ -70,3 +70,56 @@ def load_banks(banks: list[dict]) -> int:
     finally:
 
         connection.close()
+
+
+def fetch_banks() -> list[dict]:
+    """
+    Fetch existing issuing banks from PostgreSQL.
+
+    These records are used as dependencies by
+    downstream payment-method generation.
+    """
+
+    query = """
+        SELECT
+            id,
+            bank_id,
+            bank_name,
+            bank_code,
+            country_code,
+            country_name,
+            supported_card_networks,
+            bank_status
+        FROM issuing_banks
+        ORDER BY id;
+    """
+
+    connection = get_connection()
+
+    try:
+
+        with connection.cursor() as cursor:
+
+            cursor.execute(query)
+
+            rows = cursor.fetchall()
+
+            columns = [
+                "id",
+                "bank_id",
+                "bank_name",
+                "bank_code",
+                "country_code",
+                "country_name",
+                "supported_card_networks",
+                "bank_status",
+            ]
+
+            return [
+                dict(zip(columns, row))
+                for row in rows
+            ]
+
+    finally:
+
+        connection.close()
