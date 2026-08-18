@@ -357,3 +357,222 @@ products:
 simulation:
 
   current_date: 2026-08-14
+
+
+transactions:
+
+  historical_start_date: "2026-01-01"
+
+  transaction_type_distribution:
+
+    PAYMENT:
+      weight: 100.00
+
+  daily_volume:
+
+    average: 18437
+
+    variation:
+
+      min_multiplier: 0.81
+      max_multiplier: 1.23
+
+  quantity_distribution:
+
+    1:
+      weight: 47.18
+
+    2:
+      weight: 33.74
+
+    3:
+      weight: 13.86
+
+    4:
+      weight: 5.22
+
+  geography:
+
+    domestic:
+      weight: 91.37
+
+    cross_border:
+      weight: 8.63
+
+  initiation:
+
+    hour_distribution:
+
+      00:
+        weight: 1.42
+      01:
+        weight: 0.91
+      02:
+        weight: 0.63
+      03:
+        weight: 0.51
+      04:
+        weight: 0.57
+      05:
+        weight: 0.82
+      06:
+        weight: 1.37
+      07:
+        weight: 2.18
+      08:
+        weight: 3.71
+      09:
+        weight: 5.24
+      10:
+        weight: 6.18
+      11:
+        weight: 6.83
+      12:
+        weight: 7.12
+      13:
+        weight: 7.46
+      14:
+        weight: 7.81
+      15:
+        weight: 7.93
+      16:
+        weight: 7.68
+      17:
+        weight: 7.42
+      18:
+        weight: 7.73
+      19:
+        weight: 7.86
+      20:
+        weight: 6.91
+      21:
+        weight: 5.31
+      22:
+        weight: 3.84
+      23:
+        weight: 2.46
+
+  lifecycle:
+
+    scenario_distribution:
+
+      STANDARD_CAPTURE:
+        weight: 72.43
+
+      CUSTOMER_ACTION:
+        weight: 9.18
+
+      AUTHORIZATION_FAILURE:
+        weight: 7.64
+
+      PROCESSING_FAILURE:
+        weight: 5.27
+
+      CANCELED:
+        weight: 3.11
+
+      CAPTURE_FAILURE:
+        weight: 2.37
+
+    paths:
+
+      STANDARD_CAPTURE:
+        - PENDING
+        - PROCESSING
+        - AUTHORIZED
+        - REQUIRES_CAPTURE
+        - CAPTURED
+
+      CUSTOMER_ACTION:
+        - PENDING
+        - REQUIRES_ACTION
+        - PROCESSING
+        - AUTHORIZED
+        - REQUIRES_CAPTURE
+        - CAPTURED
+
+      AUTHORIZATION_FAILURE:
+        - PENDING
+        - PROCESSING
+        - FAILED
+
+      PROCESSING_FAILURE:
+        - PENDING
+        - PROCESSING
+        - FAILED
+
+      CANCELED:
+        - PENDING
+        - CANCELED
+
+      CAPTURE_FAILURE:
+        - PENDING
+        - PROCESSING
+        - AUTHORIZED
+        - REQUIRES_CAPTURE
+        - FAILED
+
+    event_delays_seconds:
+
+      PENDING_TO_PROCESSING:
+        min: 0.18
+        max: 4.73
+
+      PENDING_TO_REQUIRES_ACTION:
+        min: 0.42
+        max: 8.64
+
+      REQUIRES_ACTION_TO_PROCESSING:
+        min: 12.37
+        max: 864.52
+
+      PROCESSING_TO_AUTHORIZED:
+        min: 0.31
+        max: 6.82
+
+      PROCESSING_TO_FAILED:
+        min: 0.27
+        max: 9.43
+
+      AUTHORIZED_TO_REQUIRES_CAPTURE:
+        min: 0.14
+        max: 3.71
+
+      REQUIRES_CAPTURE_TO_CAPTURED:
+        min: 0.23
+        max: 18.46
+
+      REQUIRES_CAPTURE_TO_FAILED:
+        min: 0.31
+        max: 24.18
+
+      PENDING_TO_CANCELED:
+        min: 2.17
+        max: 172.63
+
+
+  attempts:
+
+    max_attempts: 3
+
+    retry_policy:
+
+      AUTHORIZATION_FAILURE:
+        retryable: true
+        retry_probability: 61.73
+
+      PROCESSING_FAILURE:
+        retryable: true
+        retry_probability: 74.26
+
+      CAPTURE_FAILURE:
+        retryable: true
+        retry_probability: 38.41
+
+      CANCELED:
+        retryable: false
+        retry_probability: 0.00
+
+    retry_delay_seconds:
+      min: 1.37
+      max: 47.82
