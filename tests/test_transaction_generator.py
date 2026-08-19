@@ -66,18 +66,23 @@ def main():
         for _ in range(sample_size)
     ]
 
+    transaction_rows = [
+        result["transaction"]
+        for result in transactions
+    ]
+
     # --------------------------------------------------------------
     # Basic validation
     # --------------------------------------------------------------
 
-    if len(transactions) != sample_size:
+    if len(transaction_rows) != sample_size:
         raise AssertionError(
             "Incorrect number of transactions generated."
         )
 
     transaction_ids = {
         transaction["transaction_id"]
-        for transaction in transactions
+        for transaction in transaction_rows
     }
 
     if len(transaction_ids) != sample_size:
@@ -103,7 +108,7 @@ def main():
         "initiated_at",
     }
 
-    for transaction in transactions:
+    for transaction in transaction_rows:
 
         missing_fields = (
             required_fields
@@ -160,13 +165,13 @@ def main():
 
     print(
         f"Generated transactions: "
-        f"{len(transactions):,}"
+        f"{len(transaction_rows):,}"
     )
 
     print()
     print("First 5 transactions:")
 
-    for transaction in transactions[:5]:
+    for transaction in transaction_rows[:5]:
 
         print(transaction)
 

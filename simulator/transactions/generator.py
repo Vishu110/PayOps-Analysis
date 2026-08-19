@@ -2,6 +2,7 @@ from datetime import datetime, date, time
 from decimal import Decimal
 from zoneinfo import ZoneInfo
 import random
+import secrets
 
 from simulator.transactions.selector import (
     TransactionSelector,
@@ -219,15 +220,8 @@ class TransactionGenerator:
         self,
     ) -> str:
 
-        alphabet = (
-            "abcdefghijklmnopqrstuvwxyz"
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            "0123456789"
-        )
-
-        suffix = "".join(
-            self.rng.choice(alphabet)
-            for _ in range(24)
+        suffix = secrets.token_urlsafe(
+            18
         )
 
         return f"txn_{suffix}"
@@ -276,36 +270,45 @@ class TransactionGenerator:
         )
 
         return {
-            "transaction_id":
-                self._generate_transaction_id(),
+            "transaction": {
+                "transaction_id":
+                    self._generate_transaction_id(),
 
-            "customer_fk":
-                customer["id"],
+                "customer_fk":
+                    customer["id"],
 
-            "merchant_fk":
-                merchant["id"],
+                "merchant_fk":
+                    merchant["id"],
 
-            "product_fk":
-                product["id"],
+                "product_fk":
+                    product["id"],
 
-            "payment_method_fk":
-                payment_method["id"],
+                "payment_method_fk":
+                    payment_method["id"],
 
-            "transaction_type":
-                transaction_type,
+                "transaction_type":
+                    transaction_type,
 
-            "amount":
-                amount,
+                "amount":
+                    amount,
 
-            "currency":
-                product["currency"],
+                "currency":
+                    product["currency"],
 
-            "quantity":
-                quantity,
+                "quantity":
+                    quantity,
 
-            "current_status":
-                "PENDING",
+                "current_status":
+                    "PENDING",
 
-            "initiated_at":
-                initiated_at,
+                "initiated_at":
+                    initiated_at,
+            },
+
+            "context": {
+                "customer": customer,
+                "merchant": merchant,
+                "product": product,
+                "payment_method": payment_method,
+            },
         }
