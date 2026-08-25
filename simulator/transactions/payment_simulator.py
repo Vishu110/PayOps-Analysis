@@ -26,11 +26,16 @@ class PaymentSimulator:
             attempt_engine
         )
 
-    def generate_one(self):
+    def generate_one(
+        self,
+        transaction_date=None,
+    ):
 
         generated_payment = (
             self.transaction_generator
-            .generate_one()
+            .generate_one(
+                transaction_date=transaction_date
+            )
         )
 
         transaction = (

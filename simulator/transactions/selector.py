@@ -6,6 +6,9 @@ class TransactionSelector:
     Select a valid customer, merchant, product,
     payment method, and eligible processors for a
     transaction.
+
+    Candidate lists that are static during simulation
+    are precomputed by TransactionDependencyResolver.
     """
 
     def __init__(
@@ -42,14 +45,9 @@ class TransactionSelector:
 
     def _select_customer(self) -> dict:
 
-        active_customers = [
-            customer
-            for customer in self.resolver.customers
-            if customer["customer_status"] == "ACTIVE"
-            and self.resolver.get_valid_payment_methods(
-                customer
-            )
-        ]
+        active_customers = (
+            self.resolver.active_customers
+        )
 
         if not active_customers:
             raise ValueError(
@@ -71,20 +69,19 @@ class TransactionSelector:
         is_cross_border: bool,
     ) -> dict:
 
-        active_merchants = [
-            merchant
-            for merchant in self.resolver.merchants
-            if merchant["merchant_status"] == "ACTIVE"
-            and self.resolver.get_valid_products(
-                merchant
-            )
-        ]
+        active_merchants = (
+            self.resolver.active_merchants
+        )
 
         if not active_merchants:
             raise ValueError(
                 "No active merchants with valid "
                 "products available."
             )
+
+        customer_country = (
+            customer["country_code"]
+        )
 
         if is_cross_border:
 
@@ -93,7 +90,7 @@ class TransactionSelector:
                 for merchant in active_merchants
                 if (
                     merchant["country_code"]
-                    != customer["country_code"]
+                    != customer_country
                 )
             ]
 
@@ -104,16 +101,15 @@ class TransactionSelector:
                 for merchant in active_merchants
                 if (
                     merchant["country_code"]
-                    == customer["country_code"]
+                    == customer_country
                 )
             ]
 
         if not eligible:
-
             raise ValueError(
                 "No eligible merchant found for "
                 f"customer country "
-                f"{customer['country_code']} "
+                f"{customer_country} "
                 f"and cross-border="
                 f"{is_cross_border}."
             )
@@ -146,6 +142,7 @@ class TransactionSelector:
         # Prefer the customer's default payment
         # method, while still allowing non-default
         # methods to be selected.
+
         default_methods = [
             payment_method
             for payment_method in payment_methods
@@ -155,9 +152,11 @@ class TransactionSelector:
         if default_methods:
 
             # The default method receives a higher
-            # probability, rather than being selected
+            # probability rather than being selected
             # 100% of the time.
+
             if self.rng.random() < 0.82:
+
                 return self.rng.choice(
                     default_methods
                 )

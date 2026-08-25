@@ -5,6 +5,10 @@ class TransactionDependencyResolver:
     """
     Build and resolve valid master-data relationships
     required for transaction generation.
+
+    Expensive dependency validation is performed once
+    during initialization and cached for repeated
+    transaction generation.
     """
 
     def __init__(self, dependencies: dict):
@@ -18,7 +22,7 @@ class TransactionDependencyResolver:
         self._build_indexes()
 
     # ------------------------------------------------------------------
-    # Build lookup indexes
+    # Build lookup indexes and caches
     # ------------------------------------------------------------------
 
     def _build_indexes(self) -> None:
@@ -57,10 +61,39 @@ class TransactionDependencyResolver:
         self.products_by_merchant = defaultdict(list)
 
         for product in self.products:
-
             self.products_by_merchant[
                 product["merchant_fk"]
             ].append(product)
+
+        # --------------------------------------------------------------
+        # Valid products by merchant
+        #
+        # These rules do not change during simulation, so calculate
+        # them once instead of filtering products for every transaction.
+        # --------------------------------------------------------------
+
+        self.valid_products_by_merchant = {}
+
+        for merchant in self.merchants:
+
+            merchant_id = merchant["id"]
+
+            valid_products = [
+                product
+                for product in self.products_by_merchant.get(
+                    merchant_id,
+                    [],
+                )
+                if (
+                    product["product_status"] == "ACTIVE"
+                    and product["currency"]
+                    == merchant["default_currency"]
+                )
+            ]
+
+            self.valid_products_by_merchant[
+                merchant_id
+            ] = valid_products
 
         # --------------------------------------------------------------
         # Payment methods by customer
@@ -69,10 +102,77 @@ class TransactionDependencyResolver:
         self.payment_methods_by_customer = defaultdict(list)
 
         for payment_method in self.payment_methods:
-
             self.payment_methods_by_customer[
                 payment_method["customer_fk"]
             ].append(payment_method)
+
+        # --------------------------------------------------------------
+        # Valid payment methods by customer
+        #
+        # Calculate once because payment-method status is static
+        # during transaction generation.
+        # --------------------------------------------------------------
+
+        self.valid_payment_methods_by_customer = {}
+
+        for customer in self.customers:
+
+            customer_id = customer["id"]
+
+            valid_payment_methods = [
+                payment_method
+                for payment_method
+                in self.payment_methods_by_customer.get(
+                    customer_id,
+                    [],
+                )
+                if (
+                    payment_method[
+                        "payment_method_status"
+                    ]
+                    == "ACTIVE"
+                )
+            ]
+
+            self.valid_payment_methods_by_customer[
+                customer_id
+            ] = valid_payment_methods
+
+        # --------------------------------------------------------------
+        # Active customers with valid payment methods
+        #
+        # This list is generated once and reused for every transaction.
+        # --------------------------------------------------------------
+
+        self.active_customers = [
+            customer
+            for customer in self.customers
+            if (
+                customer["customer_status"] == "ACTIVE"
+                and self.valid_payment_methods_by_customer.get(
+                    customer["id"],
+                    [],
+                )
+            )
+        ]
+
+        # --------------------------------------------------------------
+        # Active merchants with valid products
+        #
+        # This list is generated once and reused for every transaction.
+        # --------------------------------------------------------------
+
+        self.active_merchants = [
+            merchant
+            for merchant in self.merchants
+            if (
+                merchant["merchant_status"] == "ACTIVE"
+                and self.valid_products_by_merchant.get(
+                    merchant["id"],
+                    [],
+                )
+            )
+        ]
 
         # --------------------------------------------------------------
         # Processors by country
@@ -161,6 +261,20 @@ class TransactionDependencyResolver:
         )
 
     # ------------------------------------------------------------------
+    # Valid products
+    # ------------------------------------------------------------------
+
+    def get_valid_products(
+        self,
+        merchant: dict,
+    ) -> list[dict]:
+
+        return self.valid_products_by_merchant.get(
+            merchant["id"],
+            [],
+        )
+
+    # ------------------------------------------------------------------
     # Payment methods
     # ------------------------------------------------------------------
 
@@ -171,6 +285,20 @@ class TransactionDependencyResolver:
 
         return self.payment_methods_by_customer.get(
             customer_id,
+            [],
+        )
+
+    # ------------------------------------------------------------------
+    # Valid payment methods
+    # ------------------------------------------------------------------
+
+    def get_valid_payment_methods(
+        self,
+        customer: dict,
+    ) -> list[dict]:
+
+        return self.valid_payment_methods_by_customer.get(
+            customer["id"],
             [],
         )
 
@@ -213,60 +341,6 @@ class TransactionDependencyResolver:
 
     # ------------------------------------------------------------------
     # Merchant product compatibility
-    # ------------------------------------------------------------------
-
-    def get_valid_products(
-        self,
-        merchant: dict,
-    ) -> list[dict]:
-
-        products = (
-            self.get_products_for_merchant(
-                merchant["id"]
-            )
-        )
-
-        return [
-            product
-            for product in products
-            if (
-                product["product_status"]
-                == "ACTIVE"
-            )
-            and (
-                product["currency"]
-                == merchant["default_currency"]
-            )
-        ]
-
-    # ------------------------------------------------------------------
-    # Customer payment-method compatibility
-    # ------------------------------------------------------------------
-
-    def get_valid_payment_methods(
-        self,
-        customer: dict,
-    ) -> list[dict]:
-
-        payment_methods = (
-            self.get_payment_methods_for_customer(
-                customer["id"]
-            )
-        )
-
-        return [
-            payment_method
-            for payment_method in payment_methods
-            if (
-                payment_method[
-                    "payment_method_status"
-                ]
-                == "ACTIVE"
-            )
-        ]
-
-    # ------------------------------------------------------------------
-    # Full dependency context
     # ------------------------------------------------------------------
 
     def resolve_customer_merchant_context(

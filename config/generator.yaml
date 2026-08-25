@@ -356,12 +356,90 @@ products:
 
 simulation:
 
+  # Existing settings
   current_date: 2026-08-14
+
+  # Historical period for full data generation
+  historical_start_date: 2023-01-01
+  historical_end_date: 2023-03-17
+
+  # --------------------------------------------------------------------------
+  # Daily transaction volume
+  # --------------------------------------------------------------------------
+
+  volume:
+
+    # Approximate average daily transaction volume at the beginning
+    # of the historical period.
+    baseline_daily_volume: 14000
+
+    # Controlled long-term growth.
+    # 1.00 = no growth
+    # 1.05 = approximately 5% annual growth
+    annual_growth_rate: 0.08
+
+    # Random day-to-day variation.
+    # Keeps volumes from looking artificially deterministic.
+    random_variation:
+      min_multiplier: 0.90
+      max_multiplier: 1.10
+
+    # ------------------------------------------------------------------------
+    # Weekday / weekend behavior
+    # ------------------------------------------------------------------------
+
+    weekday_multipliers:
+      Monday: 1.02
+      Tuesday: 1.04
+      Wednesday: 1.03
+      Thursday: 1.05
+      Friday: 1.10
+      Saturday: 0.78
+      Sunday: 0.68
+
+    # ------------------------------------------------------------------------
+    # Monthly / seasonal effects
+    # ------------------------------------------------------------------------
+
+    monthly_multipliers:
+      "01": 0.92
+      "02": 0.94
+      "03": 0.98
+      "04": 0.99
+      "05": 1.01
+      "06": 1.00
+      "07": 1.02
+      "08": 1.01
+      "09": 1.03
+      "10": 1.07
+      "11": 1.18
+      "12": 1.25
+
+    # ------------------------------------------------------------------------
+    # Business/payment-cycle effects
+    # ------------------------------------------------------------------------
+
+    payment_cycle:
+      enabled: true
+
+      # Slight increase around common salary/payment periods.
+      early_month_multiplier: 1.04
+      early_month_days: 5
+
+      # Slight increase around month-end commercial activity.
+      month_end_multiplier: 1.06
+      month_end_days: 5
+
+    # ------------------------------------------------------------------------
+    # Controlled randomness
+    # ------------------------------------------------------------------------
+
+    random_seed: 20260823
 
 
 transactions:
 
-  historical_start_date: "2026-01-01"
+  historical_start_date: "2023-01-01"
 
   transaction_type_distribution:
 

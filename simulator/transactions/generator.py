@@ -2,7 +2,7 @@ from datetime import datetime, date, time
 from decimal import Decimal
 from zoneinfo import ZoneInfo
 import random
-import secrets
+# import secrets
 
 from simulator.transactions.selector import (
     TransactionSelector,
@@ -111,48 +111,10 @@ class TransactionGenerator:
     def _generate_initiated_at(
         self,
         customer: dict,
+        transaction_date: None,
     ) -> datetime:
 
-        start_date = date.fromisoformat(
-            str(
-                self.config[
-                    "historical_start_date"
-                ]
-            )
-        )
-
-        current_date = date.fromisoformat(
-            str(
-                self.config[
-                    "_simulation_current_date"
-                ]
-            )
-        )
-
-        if start_date > current_date:
-            raise ValueError(
-                "Historical start date cannot be "
-                "after simulation current date."
-            )
-
-        # Select a calendar date uniformly for now.
-        # Daily volume variation will be applied by
-        # the outer simulation engine later.
-        day_range = (
-            current_date - start_date
-        ).days
-
-        selected_day = (
-            start_date
-            + __import__(
-                "datetime"
-            ).timedelta(
-                days=self.rng.randint(
-                    0,
-                    day_range,
-                )
-            )
-        )
+        selected_day = transaction_date
 
         hour = self._select_initiation_hour()
 
@@ -220,17 +182,31 @@ class TransactionGenerator:
         self,
     ) -> str:
 
-        suffix = secrets.token_urlsafe(
-            18
-        )
+        suffix = self.rng.randbytes(18)
 
-        return f"txn_{suffix}"
+        return (
+            "txn_"
+            + suffix.hex()
+        )
 
     # ------------------------------------------------------------------
     # Generate one transaction
     # ------------------------------------------------------------------
 
-    def generate_one(self) -> dict:
+    def generate_one(
+        self,
+        transaction_date=None,
+    ) -> dict:
+
+        if transaction_date is None:
+
+            transaction_date = date.fromisoformat(
+                str(
+                    self.config[
+                        "_simulation_current_date"
+                    ]
+                )
+            )
 
         context = self.selector.select()
 
@@ -265,7 +241,8 @@ class TransactionGenerator:
 
         initiated_at = (
             self._generate_initiated_at(
-                customer
+                customer,
+                transaction_date,
             )
         )
 
@@ -301,6 +278,9 @@ class TransactionGenerator:
                 "current_status":
                     "PENDING",
 
+                "simulation_date":
+                    transaction_date,
+
                 "initiated_at":
                     initiated_at,
             },
@@ -310,5 +290,9 @@ class TransactionGenerator:
                 "merchant": merchant,
                 "product": product,
                 "payment_method": payment_method,
+                "eligible_processors":
+                    context["eligible_processors"],
+                "is_cross_border":
+                    context["is_cross_border"],
             },
         }
