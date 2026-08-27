@@ -44,20 +44,31 @@ class TransactionVolumeGenerator:
             )
         )
 
-        years_elapsed = (
-            transaction_date.year
-            - start_date.year
-        )
+        annual_growth_rates = {
+            int(year): float(rate)
+            for year, rate
+            in self.config[
+                "annual_growth_rates"
+            ].items()
+        }
 
-        growth_rate = float(
-            self.config[
-                "annual_growth_rate"
-            ]
-        )
+        multiplier = 1.0
 
-        return (
-            1 + growth_rate
-        ) ** years_elapsed
+        for year in range(
+            start_date.year + 1,
+            transaction_date.year + 1,
+        ):
+
+            growth_rate = annual_growth_rates.get(
+                year,
+                0.0,
+            )
+
+            multiplier *= (
+                1 + growth_rate
+            )
+
+        return multiplier
 
     # ------------------------------------------------------------------
     # Weekday

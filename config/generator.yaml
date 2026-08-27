@@ -361,7 +361,7 @@ simulation:
 
   # Historical period for full data generation
   historical_start_date: 2023-01-01
-  historical_end_date: 2023-03-17
+  historical_end_date: 2026-08-31
 
   # --------------------------------------------------------------------------
   # Daily transaction volume
@@ -376,7 +376,11 @@ simulation:
     # Controlled long-term growth.
     # 1.00 = no growth
     # 1.05 = approximately 5% annual growth
-    annual_growth_rate: 0.08
+    annual_growth_rates: 
+      2023: 0.00
+      2024: 0.084
+      2025: 0.093
+      2026: 0.105
 
     # Random day-to-day variation.
     # Keeps volumes from looking artificially deterministic.

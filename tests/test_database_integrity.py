@@ -2,6 +2,7 @@ from datetime import date
 
 from database.connection import get_connection
 from database.loaders.transactions import TransactionLoader
+from simulator.utils.config_loader import load_generator_config
 
 
 def run_query(cursor, query):
@@ -13,7 +14,7 @@ def run_query(cursor, query):
 # Transaction-level integrity
 # ==============================================================
 
-def validate_transactions(cursor):
+def validate_transactions(cursor, simulation_start_date, simulation_end_date):
     print("Validating transactions...")
 
     # ----------------------------------------------------------
@@ -61,11 +62,11 @@ def validate_transactions(cursor):
 
     rows = run_query(
         cursor,
-        """
+        f"""
         SELECT COUNT(*)
         FROM transactions
-        WHERE simulation_date < DATE '2023-01-01'
-           OR simulation_date > DATE '2023-03-17';
+        WHERE simulation_date < DATE '{simulation_start_date}'
+           OR simulation_date > DATE '{simulation_end_date}';
         """,
     )
 
@@ -608,6 +609,18 @@ def main():
         "Starting database integrity validation..."
     )
 
+    config = load_generator_config()
+
+    simulation_config = config["simulation"]
+
+    simulation_start_date = simulation_config[
+        "historical_start_date"
+    ]
+
+    simulation_end_date = simulation_config[
+        "historical_end_date"
+    ]
+
     connection = get_connection()
 
     try:
@@ -616,7 +629,7 @@ def main():
 
             validate_summary(cursor)
 
-            validate_transactions(cursor)
+            validate_transactions(cursor,simulation_start_date,simulation_end_date,)
 
             validate_referential_integrity(cursor)
 

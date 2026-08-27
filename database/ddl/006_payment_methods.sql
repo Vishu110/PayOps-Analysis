@@ -14,7 +14,7 @@ CREATE TABLE payment_methods(
     card_last_four CHAR(4) NOT NULL,
     expiry_month SMALLINT NOT NULL,
     expiry_year SMALLINT NOT NULL,
-    is_default BOOLEAN NOT NULL DEFAULT FALSE,
+    is_default BOOLEAN NO   T NULL DEFAULT FALSE,
     payment_method_status payment_method_status_enum NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
